@@ -1,12 +1,20 @@
 # Learning to Generate Explanation from e-Hospital Services for Medical Suggestion
 This is the official repository for our paper [*Learning to Generate Explanation from e-Hospital Services for Medical Suggestion*](https://aclanthology.org/2022.coling-1.260/), *COLING* 2022.
 
-### [Update 10/28] Add code implementation! :tada: (Readme will be updated shortly)
+### [Update 10/29] Update README!
+### [Update 10/28] Add code implementation! :tada: ~~(README will be updated shortly)~~
 ---
-## Dataset
+## Table of contents
+- [Dataset](#dataset)
+- [Code](#code)
+  - [the mT5](#code-mt5)
+  - [the Multi-task Learning mT5](#code-mtlmt5)
+  - [the Discourse-aware Multi-task Learning mT5](#code-dmtlmt5)
+
+## Dataset <a name="dataset"></a>
 You can download our dataset from [here](https://drive.google.com/u/0/uc?id=1yB933kGHt-ai45H5rxOfEfsM2LlDAn6r&export=download).
 
-The folder structure for the dataset is shown below, we saperate suggestion (recmd) and explanation (expln) in test data of R2 and R3 for convinience to perform evaluation.
+The folder structure for the dataset is shown below, we saperate suggestion (recmd) and explanation (expln) in the testset of R2 and R3 for convinience to perform evaluation.
 
   ```
   data
@@ -33,14 +41,14 @@ The folder structure for the dataset is shown below, we saperate suggestion (rec
   > The dataset is originally collected from [here](https://sp1.hso.mohw.gov.tw/doctor/).
 
 
-## Code
+## Code <a name="code"></a>
 See ```scripts/``` for our code.
 All training and evaluation can be done by the setting the correct arguments in ```train.sh``` and run
 ```
 bash train.sh
 ```
 ### How to set arguments
-- Train and Evaluate mT5
+- Train and Evaluate mT5 <a name="code-mt5"></a>
   
   ```
   python train.py \
@@ -67,7 +75,7 @@ bash train.sh
       --predict_with_generate True \
       --generation_num_beams 2 \
   ```
-- Train and Evaluate MTL mT5
+- Train and Evaluate MTL mT5 <a name="code-mtlmt5"></a>
   
   ```
   python train.py \
@@ -94,7 +102,7 @@ bash train.sh
       --predict_with_generate True \
       --generation_num_beams 2 \
   ```
-- Train and Evaluate DMTL mT5
+- Train and Evaluate DMTL mT5 <a name="code-dmtlmt5"></a>
 
   ```
   python train.py \
@@ -122,4 +130,6 @@ bash train.sh
       --generation_num_beams 2 \
   ```
 Our arguments are directly compatible with [the huggingface Seq2SeqTrainingArguments](https://huggingface.co/docs/transformers/main_classes/trainer#transformers.Seq2SeqTrainingArguments), you can adjust according to your own need. E.g., (un)set ```--do_train``` or ```do_eval``` if you only want to train or evaluate trained model.
+
+If you want to evaluate only the suggestion/explanation for MTL mT5 or DMTL mT5, set ```--valid_data_path``` to the cooresponding testset data path as mentioned in above [Dataset section](#dataset).
 
