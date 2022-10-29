@@ -1,7 +1,7 @@
 # Learning to Generate Explanation from e-Hospital Services for Medical Suggestion
 This is the official repository for our paper [*Learning to Generate Explanation from e-Hospital Services for Medical Suggestion*](https://aclanthology.org/2022.coling-1.260/), *COLING* 2022.
 
-### [Update 10/29] Update README!
+### [Update 10/29] README updated!
 ### [Update 10/28] Add code implementation! :tada: ~~(README will be updated shortly)~~
 ---
 ## Table of contents
@@ -14,7 +14,7 @@ This is the official repository for our paper [*Learning to Generate Explanation
 ## Dataset <a name="dataset"></a>
 You can download our dataset from [here](https://drive.google.com/u/0/uc?id=1yB933kGHt-ai45H5rxOfEfsM2LlDAn6r&export=download).
 
-The folder structure for the dataset is shown below, we saperate suggestion (recmd) and explanation (expln) in the testset of R2 and R3 for convinience to perform evaluation.
+The folder structure for the dataset is shown below, we saperate suggestion (```recmd/```) and explanation (```expln/```) in the testset of R2 and R3 for convinience to perform evaluation.
 
   ```
   data
@@ -131,5 +131,5 @@ bash train.sh
   ```
 Our arguments are directly compatible with [the huggingface Seq2SeqTrainingArguments](https://huggingface.co/docs/transformers/main_classes/trainer#transformers.Seq2SeqTrainingArguments), you can adjust according to your own need. E.g., (un)set ```--do_train``` or ```do_eval``` if you only want to train or evaluate trained model.
 
-If you want to evaluate only the suggestion/explanation for MTL mT5 or DMTL mT5, set ```--valid_data_path``` to the cooresponding testset data path as mentioned in above [Dataset section](#dataset).
+If you want to evaluate only the suggestion/explanation for MTL mT5 or DMTL mT5, set ```--valid_data_path``` to the cooresponding testset data path as mentioned in the above [Dataset section](#dataset).
 
