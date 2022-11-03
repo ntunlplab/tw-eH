@@ -1,6 +1,7 @@
 # Learning to Generate Explanation from e-Hospital Services for Medical Suggestion
 This is the official repository for our paper [*Learning to Generate Explanation from e-Hospital Services for Medical Suggestion*](https://aclanthology.org/2022.coling-1.260/), *COLING* 2022.
 
+### [Update 11/03] Add requirements.
 ### [Update 10/29] README updated!
 ### [Update 10/28] Add code implementation! :tada: ~~(README will be updated shortly)~~
 ---
