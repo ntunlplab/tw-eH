@@ -7,9 +7,8 @@ This is the official repository for our paper [*Learning to Generate Explanation
 ## Table of contents
 - [Dataset](#dataset)
 - [Code](#code)
-  - [the mT5](#code-mt5)
-  - [the Multi-task Learning mT5](#code-mtlmt5)
-  - [the Discourse-aware Multi-task Learning mT5](#code-dmtlmt5)
+  - [Requirements](#requirements)
+  - [Usage](#usage)
 
 ## Dataset <a name="dataset"></a>
 You can download our dataset from [here](https://drive.google.com/u/0/uc?id=1yB933kGHt-ai45H5rxOfEfsM2LlDAn6r&export=download).
@@ -42,12 +41,20 @@ The folder structure for the dataset is shown below, we saperate suggestion (```
 
 
 ## Code <a name="code"></a>
+### Requirements <a name="requirements"></a>
+1. Install required packages listed in ```requirements.txt```.
+2. Install ```tw_rouge``` (for calculating Chinese Rouge score) by running the following command
+```
+pip install -e tw_rouge
+```
+[reference](https://github.com/cccntu/tw_rouge]
+### Usage <a name="usage"></a>
 See ```scripts/``` for our code.
-All training and evaluation can be done by the setting the correct arguments in ```train.sh``` and run
+All training and evaluation can be done by [setting the correct arguments](#set-arguments) in ```train.sh``` and run
 ```
 bash train.sh
 ```
-### How to set arguments
+### How to set arguments <a name="set-arguments"></a>
 - Train and Evaluate mT5 <a name="code-mt5"></a>
   
   ```
